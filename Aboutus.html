@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html class="light scroll-smooth" lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <title>Our Story | Drool Over Patisserie</title>
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Plus+Jakarta+Sans:wght@300;400;600&display=swap"
+        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..400&display=swap"
+        rel="stylesheet" />
+
+    <script id="tailwind-config">
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#0F1C15",
+                        "accent": "#C5A36A",
+                        "cream": "#F9F7F2",
+                        "stone": "#E2E0DB"
+                    },
+                    fontFamily: {
+                        'serif': ['Cormorant Garamond', 'serif'],
+                        'sans': ['Plus Jakarta Sans', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            background-color: #F9F7F2;
+            color: #0F1C15;
+            overflow-x: hidden;
+        }
+
+        .glass-nav {
+            backdrop-filter: blur(12px);
+            background: rgba(249, 247, 242, 0.9);
+        }
+
+        .reveal-text {
+            animation: fadeInUp 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .sepia-hover {
+            filter: sepia(0.3) contrast(1.05);
+            transition: all 0.8s ease;
+        }
+
+        .sepia-hover:hover {
+            filter: sepia(0) contrast(1);
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <nav class="sticky top-0 w-full z-50 glass-nav border-b border-primary/5">
+        <div class="max-w-7xl mx-auto px-6 md:px-12 py-4 md:py-5 flex justify-between items-center">
+            <div></div>
+
+            <div class="hidden md:flex items-center gap-8 lg:gap-12 text-[10px] uppercase tracking-[0.4em] font-bold">
+                <a href="index.html" class=text-primary/60 hover:text-accent transition-colors">Home</a>
+                <a href="Products.html" class="text-primary/60 hover:text-accent transition-colors">Products</a>
+                <a href="Aboutus.html" class = "text-primary hover:text-accent transition-colors border-b border-accent pb-1">About Us</a>
+                <a href="Blogs.html" class="text-primary/60 hover:text-accent transition-colors">Blogs</a>
+                <a href="Contact Us.html" class="text-primary/60 hover:text-accent transition-colors">Contact Us</a>
+            </div>
+
+            <div class="flex items-center gap-4">
+                <a href="Contact Us.html">
+                    <button
+                        class="hidden md:block bg-primary text-white px-6 py-2.5 rounded-sm text-[10px] uppercase tracking-widest font-bold hover:bg-accent transition-all">
+                        Visit the Boutique
+                    </button>
+                </a>
+                <button onclick="document.getElementById('mobile-menu').classList.remove('translate-x-full')"
+                    class="md:hidden material-symbols-outlined text-primary text-3xl">menu</button>
+            </div>
+        </div>
+    </nav>
+
+    <div id="mobile-menu"
+        class="fixed inset-0 bg-cream z-[60] translate-x-full flex flex-col items-center justify-center gap-8">
+        <button onclick="document.getElementById('mobile-menu').classList.add('translate-x-full')"
+            class="absolute top-8 right-8 material-symbols-outlined text-4xl">close</button>
+        <a href="index.html" class="font-serif text-4xl italic">Home</a>
+        <a href="Products.html" class="font-serif text-4xl italic">Products</a>
+        <a href="Aboutus.html" class="font-serif text-4xl italic">About Us</a>
+        <a href="Blogs.html" class="font-serif text-4xl italic">Blogs</a>
+        <a href="Contact Us.html" class="font-serif text-4xl italic">Contact Us</a>
+
+        <a href="Contact Us.html"
+            class="mt-4 bg-primary text-white px-8 py-4 rounded-sm text-[10px] uppercase tracking-widest font-bold">
+            Visit the Boutique</a>
+    </div>
+
+    <!-- HEADER WITH LOGO ONLY -->
+    <header class="pt-10 pb-16 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto flex flex-col items-center text-center space-y-6">
+
+            <!-- LOGO -->
+            <img src="Images/DOC 2.png" alt="Drool Over Logo" class="h-16 md:h-40 w-auto object-contain">
+
+            <!-- TAGLINE / TITLE -->
+            <span class="text-accent uppercase tracking-[0.6em] text-[11px] font-bold">The Heritage</span>
+
+            <h1 class="font-serif text-6xl md:text-9xl italic leading-none reveal-text">
+                The Hands Behind <br />
+                <span class="not-italic text-primary">The Velvet.</span>
+            </h1>
+
+        </div>
+    </header>
+
+    <section class="py-20 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-24 items-center">
+            <div class="relative group">
+                <div class="aspect-[4/5] rounded-sm overflow-hidden shadow-2xl">
+                    <img src="Images/Ambience.png" class="w-full h-full object-cover sepia-hover" alt="Chef craft">
+                </div>
+                <div
+                    class="absolute -bottom-10 -right-10 bg-white p-8 hidden md:block border border-stone/30 shadow-xl">
+                    <p class="font-serif text-2xl italic text-primary">"Baking is a conversation <br /> with time."</p>
+                    <p class="text-[9px] uppercase tracking-widest mt-4 text-accent font-bold">— Clara Voss, Founder</p>
+                </div>
+            </div>
+
+            <div class="space-y-12">
+                <div class="space-y-6">
+                    <h2 class="font-serif text-4xl md:text-5xl italic border-l-4 border-accent pl-6">Obsession in Small
+                        Batches.</h2>
+                    <p class="text-primary/70 leading-loose font-light text-lg">
+                        Founded in 2026, Drool Over began as a quiet experiment in a corner studio in the Velvet
+                        District. Our mission was singular: to strip away the noise of modern patisserie and focus on
+                        the architectural perfection of the cheesecake.
+                    </p>
+                </div>
+                <div class="space-y-6">
+                    <h2 class="font-serif text-4xl md:text-5xl italic border-l-4 border-accent pl-6">No Compromise.</h2>
+                    <p class="text-primary/70 leading-loose font-light text-lg">
+                        We believe that a recipe is only as good as the silence in the room when it's being made. From
+                        sourcing single-origin vanilla beans to hand-churning our cultured butter, every step is a
+                        ritual of patience.
+                    </p>
+                </div>
+
+                <div class="pt-8 border-t border-stone">
+                    <div class="grid grid-cols-2 gap-12">
+                        <div>
+                            <p class="text-5xl font-serif text-primary">12k+</p>
+                            <p class="text-[10px] uppercase tracking-[0.3em] text-accent font-bold mt-3">Hours of R&D
+                            </p>
+                        </div>
+                        <div>
+                            <p class="text-5xl font-serif text-primary">0</p>
+                            <p class="text-[10px] uppercase tracking-[0.3em] text-accent font-bold mt-3">Artificial
+                                Additives</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 px-6 md:px-12 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="flex flex-col md:flex-row justify-between items-end mb-20 gap-8">
+                <div class="max-w-xl">
+                    <span class="text-accent uppercase tracking-[0.4em] text-[10px] font-bold block mb-4">Our
+                        Craft</span>
+                    <h2 class="font-serif text-5xl md:text-6xl italic">The Art of Cheesecake.</h2>
+                </div>
+                <p class="max-w-md text-base text-primary/60 leading-relaxed">
+                    Every cheesecake we create is a balance of texture, flavor, and patience. From the richness of the
+                    cream cheese to the delicacy of the crust, each ingredient is chosen to deliver a perfect, indulgent
+                    experience.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12">
+
+                <!-- Cream Cheese -->
+                <div class="group cursor-crosshair">
+                    <div class="overflow-hidden mb-6">
+                        <img src="https://images.unsplash.com/photo-1596733430284-f7437764b1a9?auto=format&fit=crop&q=80"
+                            class="w-full aspect-square object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100"
+                            alt="Cream cheese">
+                    </div>
+                    <h3 class="font-serif text-2xl italic mb-2">Silky Cream Cheese</h3>
+                    <p class="text-[10px] text-primary/40 leading-relaxed tracking-widest uppercase font-bold">
+                        Rich • Smooth • Perfectly Balanced
+                    </p>
+                </div>
+
+                <!-- Flavors -->
+                <div class="group cursor-crosshair">
+                    <div class="overflow-hidden mb-6">
+                        <img src="https://images.unsplash.com/photo-1534706936160-d5ee67737249?auto=format&fit=crop&q=80"
+                            class="w-full aspect-square object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100"
+                            alt="Flavors">
+                    </div>
+                    <h3 class="font-serif text-2xl italic mb-2">Signature Flavors</h3>
+                    <p class="text-[10px] text-primary/40 leading-relaxed tracking-widest uppercase font-bold">
+                        Classic • Chocolate • Berry Infusions
+                    </p>
+                </div>
+
+                <!-- Crust -->
+                <div class="group cursor-crosshair">
+                    <div class="overflow-hidden mb-6">
+                        <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?auto=format&fit=crop&q=80"
+                            class="w-full aspect-square object-cover grayscale group-hover:grayscale-0 transition-all duration-1000 scale-105 group-hover:scale-100"
+                            alt="Crust">
+                    </div>
+                    <h3 class="font-serif text-2xl italic mb-2">Golden Crust</h3>
+                    <p class="text-[10px] text-primary/40 leading-relaxed tracking-widest uppercase font-bold">
+                        Buttery • Crisp • Handcrafted Base
+                    </p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section class="py-40 bg-primary text-cream text-center px-6 relative overflow-hidden">
+        <div class="absolute inset-0 opacity-10 pointer-events-none">
+            <div
+                class="absolute top-0 left-0 w-full h-full bg-[url('https://www.transparenttextures.com/patterns/pinstripe.png')]">
+            </div>
+        </div>
+        <div class="max-w-3xl mx-auto space-y-10 relative z-10">
+            <span class="text-accent uppercase tracking-[0.6em] text-[10px] font-bold">The Sanctuary</span>
+            <h2 class="font-serif text-6xl md:text-8xl italic">Come sit with us.</h2>
+            <p class="text-cream/60 leading-loose text-lg font-light">
+                Experience the architecture of flavor in person. Our doors are open in the heart of London's Velvet
+                District, where every slice is served at the perfect molecular temperature.
+            </p>
+            <div class="pt-8">
+                <a href="Contact Us.html">
+                    <button
+                        class="border border-accent text-accent px-16 py-6 text-[10px] uppercase tracking-[0.4em] font-bold hover:bg-accent hover:text-primary transition-all duration-500">
+                        Book a Table
+                    </button>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-primary text-cream pt-20 md:pt-24 pb-12 px-6 md:px-12">
+        <div class="max-w-7xl mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-12 md:gap-16 mb-20 md:mb-24 text-center md:text-left">
+                <div>
+                    <div class="flex justify-center lg:justify-start mb-4">
+                        <img src="Images/DOC 1.jpg" alt="Drool Over Logo"
+                            class="h-20 md:h-24 lg:h-20 w-auto object-contain">
+                    </div>
+                    <p class="text-cream/50 text-[10px] uppercase tracking-widest leading-relaxed">
+                        Ground floor, 201, Swamy Vivekananda Rd 2nd Cross Rd, Narayana Nagar 1st Block, Bangalore City
+                        Municipal Corporation Layout, 560062<br />Bengaluru, Karnataka<br /><br />
+                        Tue — Sun | 10:30 AM — 11:00 PM
+                    </p>
+                </div>
+                <div>
+                    <h5 class="text-accent text-[10px] uppercase tracking-[0.3em] font-bold mb-6 md:mb-8">Explore</h5>
+                    <ul class="space-y-4 text-[10px] uppercase tracking-widest opacity-60">
+                        <li><a href="Aboutus.html" class="hover:text-accent transition-colors">Our Story</a></li>
+                        <li><a href="Products.html" class="hover:text-accent transition-colors">Products</a></li>
+                        <li><a href="Blogs.html" class="hover:text-accent transition-colors">Blogs</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h5 class="text-accent text-[10px] uppercase tracking-[0.3em] font-bold mb-6 md:mb-8">Connect</h5>
+                    <ul class="space-y-4 text-[10px] uppercase tracking-widest opacity-60">
+                        <li><a href="#" class="hover:text-accent transition-colors">Instagram</a></li>
+                        <li><a href="#" class="hover:text-accent transition-colors">Facebook</a></li>
+                        <li><a href="Contact Us.html" class="hover:text-accent transition-colors">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="pt-12 border-t border-white/5 text-center">
+                <p class="text-[9px] uppercase tracking-[0.5em] text-cream/20">© 2026 Drool Over Patisserie. Built for
+                    the Discerning Palate.</p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+
+</html>
